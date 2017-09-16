@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Daily Emoji</string>
     <string name="title_activity_emoji_note">EmojiNoteActivity</string>
+    <string name="graph_button">Show graph</string>
+    <string name="self_rate_button">Self Rate</string>
 </resources>
