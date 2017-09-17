@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.dailyemoji.dailyemoji.GraphActivity">
+    tools:context="com.example.dailyemoji.dailyemoji.GraphActivity"
+    android:background="@drawable/backpastel">
 
 <com.jjoe64.graphview.GraphView
     android:layout_width="368dp"

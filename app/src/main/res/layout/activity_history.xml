@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.dailyemoji.dailyemoji.HistoryActivity"
-    android:id="@+id/activity_history">
+    android:id="@+id/activity_history"
+    android:background="@drawable/backpastel">
 
 
     <!-- Header -->
