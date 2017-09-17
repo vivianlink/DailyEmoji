@@ -45,4 +45,5 @@
     <string name="add_random_data">Add random data</string>
     <string name="note_hint">Enter extra note here</string>
     <string name="all_done_button">Enter extra note here</string>
+    <string name="settings">Settings</string>
 </resources>
