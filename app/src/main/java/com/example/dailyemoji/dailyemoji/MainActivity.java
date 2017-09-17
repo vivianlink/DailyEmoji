@@ -13,6 +13,7 @@ public class MainActivity extends Activity {
     private SeekBar emotionBar ;
     private TextView progressText ;
     private Button selfRateButton;
+    private int ratingValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,11 +23,10 @@ public class MainActivity extends Activity {
         initializeVariables();
         selfRateButton.setVisibility(View.INVISIBLE);
         emotionBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-           String progress = "";
-
             @Override
             public void onProgressChanged(SeekBar seekBar, int progressValue, boolean b) {
-                progress = Integer.toString(progressValue);
+                ratingValue = progressValue;
+                progressText.setText("Your current mood: " + Integer.toString(ratingValue) + "/" + emotionBar.getMax() );
             }
 
             @Override
@@ -36,12 +36,21 @@ public class MainActivity extends Activity {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                 selfRateButton.setVisibility(View.VISIBLE);
-                progressText.setText("Your current mood: " + progress + "/" + emotionBar.getMax() );
             }
         });
     }
 
     public void clickRating(View view){
+        DBHandler db = new DBHandler(this);
+
+        Rating rating = new Rating();
+
+        rating.setRating(ratingValue);
+        rating.setEmoji("emoji");
+        rating.setNote("my note");
+
+        db.addRating(rating);
+
         Intent intent = new Intent(this, EmojiNoteActivity.class);
         startActivity(intent);
     }
@@ -58,4 +67,9 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
 
+
+    public void clickHistory(View view){
+        Intent intent = new Intent(this, HistoryActivity.class);
+        startActivity(intent);
+    }
 }
