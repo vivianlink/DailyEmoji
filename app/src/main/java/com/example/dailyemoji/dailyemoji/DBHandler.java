@@ -87,7 +87,7 @@ class DBHandler extends SQLiteOpenHelper {
         return ratingList;
     }
 
-    private String getDateTime() {
+    public String getDateTime() {
         SimpleDateFormat dateFormat = new SimpleDateFormat(
                 "yyyy-MM-dd HH:mm:ss", Locale.getDefault());
         Date date = new Date();
