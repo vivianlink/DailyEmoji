@@ -17,4 +17,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, EmojiNoteActivity.class);
         startActivity(intent);
     }
+
+    public void clickGraph(View view){
+        Intent intent = new Intent(this, GraphActivity.class);
+        startActivity(intent);
+    }
+
+
 }

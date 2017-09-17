@@ -19,7 +19,8 @@
         <activity
             android:name=".EmojiNoteActivity"
             android:label="@string/title_activity_emoji_note"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".GraphActivity"></activity>
     </application>
 
 </manifest>
