@@ -58,11 +58,13 @@ public class EmojiActivity extends AppCompatActivity {
         for ( i = 0; i <= 21; i ++){
 
             buttons[i] = (ImageButton) views[i];
+            final ImageButton emojiButton = buttons[i];
             buttons[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    emojiName = view.getTag().toString();
+                    emojiName += view.getTag().toString() + ", ";
                     allDoneButton.setVisibility(View.VISIBLE);
+                    emojiButton.setVisibility(View.INVISIBLE);
                    // Toast.makeText(getBaseContext(), emojiId +  "  " + ratingValue , Toast.LENGTH_SHORT).show();
                 }
 
@@ -89,7 +91,10 @@ public class EmojiActivity extends AppCompatActivity {
         rating.setRating(Integer.valueOf(ratingValue));
 
         if (!Objects.equals(emojiName, "")) {
+            emojiName = emojiName.substring(0,emojiName.length()-2);
+
             rating.setEmoji(emojiName);
+
         } else {
             rating.setEmoji("NO_EMOJI");
         }

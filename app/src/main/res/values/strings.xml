@@ -7,7 +7,7 @@
     <string name="history_button">History</string>
     <string name="happiness">Happiness</string>
     <string name="emoji">Emoji</string>
-    <string name="note">Note</string>
+    <string name="note">Note : </string>
     <string name="date">Date</string>
     <string name="row_id">row_id</string>
     <string name="title_activity_settings">Settings</string>
