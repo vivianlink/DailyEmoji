@@ -1,8 +1,10 @@
 package com.example.dailyemoji.dailyemoji;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -46,5 +48,25 @@ public class HistoryActivity extends ListActivity {
         // fill in the grid_item layout
         SimpleAdapter adapter = new SimpleAdapter(this, fillMaps, R.layout.grid_item, from, to);
         lv.setAdapter(adapter);
+    }
+
+    public void clearAll(View view) {
+        // remove all the ratings from database
+        DBHandler db = new DBHandler(this);
+        db.clearAllData();
+
+        // go back to front page
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void addRandomData(View view) {
+        // add random data to database
+        DBHandler db = new DBHandler(this);
+        db.addRandomData();
+
+        // go back to front page
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

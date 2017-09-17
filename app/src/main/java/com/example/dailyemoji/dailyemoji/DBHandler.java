@@ -8,9 +8,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 class DBHandler extends SQLiteOpenHelper {
 
@@ -85,6 +88,67 @@ class DBHandler extends SQLiteOpenHelper {
 
         cursor.close();
         return ratingList;
+    }
+
+    void addRandomData() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        Random rand = new Random();
+
+        Calendar now = Calendar.getInstance();
+        int year = now.get(Calendar.YEAR);
+        int currYear = year;
+        int month = now.get(Calendar.MONTH);
+        int currMonth = month;
+        int day = now.get(Calendar.DAY_OF_MONTH);
+        int currDay = day;
+
+        // start from a year ago
+        year = year - 1;
+
+        while (year <= currYear) {
+
+            day++;
+
+            if (day > 31) {
+                day = 1;
+                month++;
+            }
+
+            if (month > 11) {
+                month = 0;
+                year++;
+            }
+
+            String strMonth = Integer.toString(month);
+
+            if (month < 10) {
+                strMonth = "0" + strMonth;
+            }
+
+            String strDay = Integer.toString(day);
+
+            if (day < 10) {
+                strDay = "0" + strDay;
+            }
+
+            values.put(KEY_RATING, rand.nextInt(11));
+            values.put(KEY_EMOJI, "emoji");
+            values.put(KEY_NOTE, "note");
+            values.put(KEY_TIMESTAMP, year + "-" + strMonth + "-" + strDay + " " + rand.nextInt(25) + ":" + rand.nextInt(61) + ":" + rand.nextInt(61));
+
+            // Inserting Row
+            db.insert(TABLE_RATES, null, values);
+        }
+
+        db.close(); // Closing database connection
+    }
+
+    void clearAllData() {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.execSQL("DELETE FROM " + TABLE_RATES);
     }
 
     private String getDateTime() {
