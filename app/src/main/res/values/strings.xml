@@ -4,4 +4,10 @@
     <string name="graph_button">Show graph</string>
     <string name="self_rate_button">Self Rate</string>
     <string name="bar_instruction">From 1 to 10, how do you feel right now?</string>
+    <string name="history_button">History</string>
+    <string name="happiness">Happiness</string>
+    <string name="emoji">Emoji</string>
+    <string name="note">Note</string>
+    <string name="date">Date</string>
+    <string name="row_id">row_id</string>
 </resources>
