@@ -109,14 +109,16 @@ public class MainActivity extends Activity {
 
     public String ratingToEmotion(int ratingValue) {
         switch (ratingValue) {
-            case 1:
+            case 0:
                 return "extremely depressed";
-            case 2:
+            case 1:
                 return "depressed";
-            case 3:
+            case 2:
                 return "very sad";
-            case 4:
+            case 3:
                 return "sad";
+            case 4:
+                return "slightly sad";
             case 5:
                 return "neutral";
             case 6:
