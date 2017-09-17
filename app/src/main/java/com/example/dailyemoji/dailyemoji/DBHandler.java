@@ -151,7 +151,7 @@ class DBHandler extends SQLiteOpenHelper {
         db.execSQL("DELETE FROM " + TABLE_RATES);
     }
 
-    private String getDateTime() {
+    public String getDateTime() {
         SimpleDateFormat dateFormat = new SimpleDateFormat(
                 "yyyy-MM-dd HH:mm:ss", Locale.getDefault());
         Date date = new Date();

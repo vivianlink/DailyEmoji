@@ -22,6 +22,22 @@ class Rating {
         this.timestamp = timestampValue;
     }
 
+    int getYear(){
+        int year = Integer.parseInt(this.timestamp.substring(0,3));
+        return year;
+    }
+
+    int getMonth(){
+        int month = Integer.parseInt(this.timestamp.substring(5,6));
+        return month;
+
+    }
+
+    int getDay(){
+        int day = Integer.parseInt(this.timestamp.substring(8,9));
+        return day;
+    }
+
     int getRating() {
         return rating;
     }

@@ -11,6 +11,7 @@ import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class GraphActivity extends AppCompatActivity {
@@ -20,6 +21,8 @@ public class GraphActivity extends AppCompatActivity {
     public String topText;
     private TextView tv;
     private GraphView gv;
+    private DBHandler db;
+    private String dateTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,8 @@ public class GraphActivity extends AppCompatActivity {
         thingsToPlot = new LineGraphSeries<DataPoint>();
         listOfY = new ArrayList<Integer>();
         topText = "";
+        db = new DBHandler(this);
+        dateTime = db.getDateTime();
 
         updateThingsToPlot(true);
         drawGraph();
@@ -50,39 +55,41 @@ public class GraphActivity extends AppCompatActivity {
 
     public void updateThingsToPlot(boolean isMonth){
 
+        int year = Integer.parseInt(dateTime.substring(0, 3));
+        int month = Integer.parseInt(dateTime.substring(5,6));
+        int day = Integer.parseInt(dateTime.substring(8,9));
+
         if (isMonth == true){
-            setTopText("Past Month's Mood Ratings");
+            setTopText("This Month's Mood Ratings");
         } else
-            setTopText("Past Year's Mood Ratings");
+            setTopText("This Year's Mood Ratings");
 
         listOfY = new ArrayList<Integer>();
         thingsToPlot = new LineGraphSeries<DataPoint>();
 
-        listOfY.add(1);
-        listOfY.add(2);
-        listOfY.add(3);
-        listOfY.add(10);
-        listOfY.add(4);
-        listOfY.add(1);
-        listOfY.add(2);
-        listOfY.add(3);
-        listOfY.add(10);
-        listOfY.add(4);
-        listOfY.add(1);
-        listOfY.add(2);
-        listOfY.add(3);
-        listOfY.add(10);
-        listOfY.add(4);
-        listOfY.add(1);
-        listOfY.add(2);
-        listOfY.add(3);
-        listOfY.add(10);
-        listOfY.add(4);
-        listOfY.add(1);
-        listOfY.add(2);
-        listOfY.add(3);
-        listOfY.add(10);
-        listOfY.add(4);
+        List<Rating> allRatingObject = db.getAllRatings();
+
+        List<Integer> allRatingInteger = new ArrayList<Integer>();
+        if (isMonth == true) {
+            for (Rating r : allRatingObject) {
+                if (r.getYear() == year &&
+                        r.getMonth() == month) {
+                    allRatingInteger.add(r.getRating());
+                }
+            }
+        }
+        if (isMonth == false) {
+            for (Rating r : allRatingObject) {
+                if (r.getYear() == year ) {
+                    allRatingInteger.add(r.getRating());
+                }
+            }
+        }
+
+
+        Collections.reverse(allRatingInteger);
+        listOfY = allRatingInteger;
+
 
     }
 
@@ -98,6 +105,9 @@ public class GraphActivity extends AppCompatActivity {
         updateThingsToPlot(false);
         setTopText("Past Year's Mood Ratings");
         tv.setText(getTopText());
+
+        gv.getViewport().setMaxX(365);
+        gv.getViewport().setXAxisBoundsManual(true);
         drawGraph();
     }
 
@@ -106,6 +116,12 @@ public class GraphActivity extends AppCompatActivity {
 
 
         gv = (GraphView) findViewById(R.id.graph);
+        gv.getViewport().setMinX(0);
+        gv.getViewport().setMinY(0);
+        gv.getViewport().setMaxY(10);
+        gv.getViewport().setMaxX(30);
+        gv.getViewport().setXAxisBoundsManual(true);
+        gv.getViewport().setYAxisBoundsManual(true);
 
         int x=-1,y =0;
 

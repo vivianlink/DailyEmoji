@@ -10,4 +10,6 @@
     <string name="note">Note</string>
     <string name="date">Date</string>
     <string name="row_id">row_id</string>
+    <string name="note_hint">Enter extra note here</string>
+    <string name="all_done_button">All Done!</string>
 </resources>
