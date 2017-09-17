@@ -21,55 +21,56 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="43dp"
         android:onClick="click30"
-        android:text="Past Month"
+        android:text=""
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintHorizontal_bias="0.037"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.946" />
+        app:layout_constraintVertical_bias="0.926"
+        android:background="@drawable/pastmonthb"
+        tools:layout_editor_absoluteY="478dp" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="39dp"
         android:onClick="click365"
-        android:text="Past Year"
+        android:text=""
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.829"
+        app:layout_constraintHorizontal_bias="0.915"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.946" />
+        app:layout_constraintVertical_bias="0.919"
+        android:background="@drawable/pastyearb" />
 
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="238dp"
-        android:layout_height="37dp"
+        android:layout_width="289dp"
+        android:layout_height="70dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.038"
-        tools:layout_editor_absoluteX="15dp"
-        tools:layout_editor_absoluteY="42dp" />
+        app:layout_constraintVertical_bias="0.058"
+        app:layout_constraintHorizontal_bias="0.898" />
 
 
 </android.support.constraint.ConstraintLayout>

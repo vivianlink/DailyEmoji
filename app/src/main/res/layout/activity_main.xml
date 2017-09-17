@@ -89,7 +89,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:onClick="clickHistory"
-        android:text="@string/history_button"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.971"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -97,7 +97,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.155"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/historyb"/>
 
     <Button
         android:id="@+id/selfRateButton"
@@ -108,7 +109,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:onClick="clickRating"
-        android:text="@string/self_rate_button"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -116,7 +117,8 @@
         app:layout_constraintVertical_bias="0.759"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintHorizontal_bias="0.806" />
+        app:layout_constraintHorizontal_bias="0.806"
+        android:background="@drawable/selfrateb"/>
 
     <Button
         android:id="@+id/button2"
@@ -127,7 +129,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:onClick="clickGraph"
-        android:text="@string/graph_button"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.873"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -135,7 +137,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.952"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/showgraphb"/>
 
     <SeekBar
         android:id="@+id/progressBar"
@@ -182,7 +185,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:onClick="clickSettings"
-        android:text="@string/settings"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -190,6 +193,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.155"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/settingb"/>
 
 </android.support.constraint.ConstraintLayout>
