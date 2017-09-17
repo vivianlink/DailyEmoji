@@ -53,4 +53,9 @@ public class MainActivity extends Activity {
 
     }
 
+    public void clickGraph(View view){
+        Intent intent = new Intent(this, GraphActivity.class);
+        startActivity(intent);
+    }
+
 }
