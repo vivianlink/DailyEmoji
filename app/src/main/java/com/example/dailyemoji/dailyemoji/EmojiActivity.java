@@ -6,10 +6,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.util.Objects;
+import java.util.StringTokenizer;
 
 import io.github.rockerhieu.emojiconize.Emojiconize;
 
@@ -26,6 +28,8 @@ public class EmojiActivity extends AppCompatActivity {
 
         final ImageButton[] buttons = new ImageButton[22];
         final View[] views = new View[22];
+        final Button allDoneButton = (Button) findViewById(R.id.button);
+        allDoneButton.setVisibility(View.INVISIBLE);
         int i ;
 
         views[0] = findViewById(R.id.smiley);
@@ -57,8 +61,8 @@ public class EmojiActivity extends AppCompatActivity {
             buttons[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(getBaseContext(), "Your emoji is saved", Toast.LENGTH_SHORT).show();
                     emojiName = view.getTag().toString();
+                    allDoneButton.setVisibility(View.VISIBLE);
                    // Toast.makeText(getBaseContext(), emojiId +  "  " + ratingValue , Toast.LENGTH_SHORT).show();
                 }
 
@@ -75,23 +79,42 @@ public class EmojiActivity extends AppCompatActivity {
     public void clickAllDone(View view){
         DBHandler db = new DBHandler(this);
 
-        Rating rating = new Rating();
+        EditText notes = (EditText) findViewById(R.id.noteField);
+        String noteReceived = getNotes(notes);
 
+        Rating rating = new Rating();
         Intent ratingValueIntent = getIntent();
-        final String ratingValue= ratingValueIntent.getStringExtra(Intent.EXTRA_TEXT);
+        String ratingValue= ratingValueIntent.getStringExtra(Intent.EXTRA_TEXT);
 
         rating.setRating(Integer.valueOf(ratingValue));
+
         if (!Objects.equals(emojiName, "")) {
             rating.setEmoji(emojiName);
         } else {
             rating.setEmoji("NO_EMOJI");
         }
 
-        rating.setNote("my note");
+        rating.setNote(noteReceived);
 
         db.addRating(rating);
         Intent intent = new Intent(this, MainActivity.class);
+
+        Toast.makeText(getBaseContext(), "Your emoji is saved", Toast.LENGTH_SHORT).show();
+
         startActivity(intent);
+
+
     }
+
+    public String getNotes(EditText notes){
+        if (notes !=null) {
+            return notes.getText().toString();
+        } else {
+            return "";
+        }
+
+    }
+
+
 
 }
