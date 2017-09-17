@@ -23,6 +23,7 @@ public class GraphActivity extends AppCompatActivity {
     private GraphView gv;
     private DBHandler db;
     private String dateTime;
+    private boolean pastMonth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,7 @@ public class GraphActivity extends AppCompatActivity {
         topText = "";
         db = new DBHandler(this);
         dateTime = db.getDateTime();
+        pastMonth = true;
 
         updateThingsToPlot(true);
         drawGraph();
@@ -55,15 +57,17 @@ public class GraphActivity extends AppCompatActivity {
 
     public void updateThingsToPlot(boolean isMonth){
 
-        int year = Integer.parseInt(dateTime.substring(0, 3));
-        int month = Integer.parseInt(dateTime.substring(5,6));
-        int day = Integer.parseInt(dateTime.substring(8,9));
+        int year = Integer.parseInt(dateTime.substring(0, 4));
+        int month = Integer.parseInt(dateTime.substring(6,7));
+        int day = Integer.parseInt(dateTime.substring(9,10));
 
         if (isMonth == true){
             setTopText("This Month's Mood Ratings");
-        } else
+            pastMonth= true;
+        } else {
             setTopText("This Year's Mood Ratings");
-
+            pastMonth= false;
+        }
         listOfY = new ArrayList<Integer>();
         thingsToPlot = new LineGraphSeries<DataPoint>();
 
@@ -94,16 +98,20 @@ public class GraphActivity extends AppCompatActivity {
     }
 
     public void click30(View view){
+        gv.removeAllSeries();
+
+
 
         updateThingsToPlot(true);
-        setTopText("Past Month's Mood Ratings");
         tv.setText(getTopText());
         drawGraph();
     }
 
     public void click365(View view){
+        gv.removeAllSeries();
+
+
         updateThingsToPlot(false);
-        setTopText("Past Year's Mood Ratings");
         tv.setText(getTopText());
 
         gv.getViewport().setMaxX(365);
@@ -119,7 +127,11 @@ public class GraphActivity extends AppCompatActivity {
         gv.getViewport().setMinX(0);
         gv.getViewport().setMinY(0);
         gv.getViewport().setMaxY(10);
-        gv.getViewport().setMaxX(30);
+        if (pastMonth == true)
+            gv.getViewport().setMaxX(30);
+        if (pastMonth == false)
+            gv.getViewport().setMaxX(365);
+
         gv.getViewport().setXAxisBoundsManual(true);
         gv.getViewport().setYAxisBoundsManual(true);
 
