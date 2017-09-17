@@ -44,6 +44,6 @@
     <string name="clear_all">Clear all</string>
     <string name="add_random_data">Add random data</string>
     <string name="note_hint">Enter extra note here</string>
-    <string name="all_done_button">Enter extra note here</string>
+    <string name="all_done_button">All done!</string>
     <string name="settings">Settings</string>
 </resources>

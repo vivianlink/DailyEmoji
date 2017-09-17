@@ -41,17 +41,19 @@ public class MainActivity extends Activity {
     }
 
     public void clickRating(View view){
-        DBHandler db = new DBHandler(this);
-
-        Rating rating = new Rating();
-
-        rating.setRating(ratingValue);
-        rating.setEmoji("emoji");
-        rating.setNote("my note");
-
-        db.addRating(rating);
+//        DBHandler db = new DBHandler(this);
+//
+//        Rating rating = new Rating();
+//
+//        rating.setRating(ratingValue);
+//        rating.setEmoji("emoji");
+//        rating.setNote("my note");
+//
+//        db.addRating(rating);
 
         Intent intent = new Intent(this, EmojiActivity.class);
+        intent.putExtra(Intent.EXTRA_TEXT, Integer.toString(ratingValue));
+
         startActivity(intent);
     }
 
