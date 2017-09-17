@@ -51,7 +51,7 @@ public class MainActivity extends Activity {
 
         db.addRating(rating);
 
-        Intent intent = new Intent(this, EmojiNoteActivity.class);
+        Intent intent = new Intent(this, EmojiActivity.class);
         startActivity(intent);
     }
 

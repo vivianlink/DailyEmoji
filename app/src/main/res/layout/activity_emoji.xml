@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.dailyemoji.dailyemoji.EmojiActivity"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
+
+    <EditText
+        android:id="@+id/noteField"
+        android:layout_width="0dp"
+        android:layout_height="115dp"
+        android:layout_marginBottom="76dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginRight="19dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/note_hint"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.778"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        />
+
+
+    <ImageButton
+        android:id="@+id/smiley"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:onClick="chooseEmoji"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/whistle"
+        app:srcCompat="@drawable/emoji_1f60a"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <ImageButton
+        android:id="@+id/huffing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="chooseEmoji"
+        app:layout_constraintLeft_toRightOf="@+id/smiley"
+        app:layout_constraintTop_toTopOf="@+id/smiley"
+        app:srcCompat="@drawable/emoji_1f624"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <ImageButton
+        android:id="@+id/soso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="chooseEmoji"
+        app:layout_constraintLeft_toRightOf="@+id/huffing"
+        app:layout_constraintTop_toTopOf="@+id/huffing"
+        app:srcCompat="@drawable/emoji_1f610"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <ImageButton
+        android:id="@+id/redface"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="chooseEmoji"
+        app:layout_constraintLeft_toRightOf="@+id/soso"
+        app:layout_constraintTop_toTopOf="@+id/soso"
+        app:srcCompat="@drawable/emoji_1f621"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <ImageButton
+        android:id="@+id/disappointed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="chooseEmoji"
+        app:layout_constraintLeft_toRightOf="@+id/redface"
+        app:layout_constraintTop_toTopOf="@+id/sunglasses"
+        app:srcCompat="@drawable/emoji_1f614"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <ImageButton
+        android:id="@+id/sunglasses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:onClick="chooseEmoji"
+        app:layout_constraintLeft_toLeftOf="@+id/hearteyes"
+        app:layout_constraintRight_toRightOf="@+id/hearteyes"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/emoji_1f60e"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <ImageButton
+        android:id="@+id/teardrop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="chooseEmoji"
+        app:srcCompat="@drawable/emoji_1f622"
+        app:layout_constraintRight_toLeftOf="@+id/happy"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/whistle"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginStart="8dp" />
+
+    <ImageButton
+        android:id="@+id/happy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="chooseEmoji"
+        app:layout_constraintLeft_toLeftOf="@+id/smiley"
+        app:layout_constraintRight_toRightOf="@+id/smiley"
+        app:layout_constraintTop_toBottomOf="@+id/smiley"
+        app:srcCompat="@drawable/emoji_1f600"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <ImageButton
+        android:id="@+id/meh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="chooseEmoji"
+        app:layout_constraintLeft_toLeftOf="@+id/huffing"
+        app:layout_constraintRight_toRightOf="@+id/huffing"
+        app:layout_constraintTop_toBottomOf="@+id/huffing"
+        app:srcCompat="@drawable/emoji_1f611"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <ImageButton
+        android:id="@+id/sad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="chooseEmoji"
+        app:layout_constraintLeft_toLeftOf="@+id/soso"
+        app:layout_constraintRight_toRightOf="@+id/soso"
+        app:layout_constraintTop_toBottomOf="@+id/soso"
+        app:srcCompat="@drawable/emoji_1f61f"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <ImageButton
+        android:id="@+id/forcesmile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="chooseEmoji"
+        app:layout_constraintLeft_toLeftOf="@+id/redface"
+        app:layout_constraintRight_toRightOf="@+id/redface"
+        app:layout_constraintTop_toBottomOf="@+id/redface"
+        app:srcCompat="@drawable/emoji_1f62c"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <ImageButton
+        android:id="@+id/kissyface"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="chooseEmoji"
+        app:layout_constraintLeft_toLeftOf="@+id/disappointed"
+        app:layout_constraintRight_toRightOf="@+id/disappointed"
+        app:layout_constraintTop_toBottomOf="@+id/disappointed"
+        app:srcCompat="@drawable/emoji_1f618"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <ImageButton
+        android:id="@+id/hearteyes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="chooseEmoji"
+        app:layout_constraintLeft_toLeftOf="@+id/ohno"
+        app:layout_constraintRight_toRightOf="@+id/ohno"
+        app:layout_constraintTop_toBottomOf="@+id/sunglasses"
+        app:srcCompat="@drawable/emoji_1f60d"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <ImageButton
+        android:id="@+id/smirk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="chooseEmoji"
+        app:layout_constraintRight_toLeftOf="@+id/happy"
+        app:layout_constraintTop_toBottomOf="@+id/teardrop"
+        app:srcCompat="@drawable/emoji_1f60f"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <ImageButton
+        android:id="@+id/hmm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="chooseEmoji"
+        app:layout_constraintLeft_toLeftOf="@+id/happy"
+        app:layout_constraintRight_toRightOf="@+id/happy"
+        app:layout_constraintTop_toBottomOf="@+id/happy"
+        app:srcCompat="@drawable/emoji_1f615"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <ImageButton
+        android:id="@+id/oops"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="chooseEmoji"
+        app:layout_constraintLeft_toLeftOf="@+id/meh"
+        app:layout_constraintRight_toRightOf="@+id/meh"
+        app:layout_constraintTop_toBottomOf="@+id/meh"
+        app:srcCompat="@drawable/emoji_1f613"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <ImageButton
+        android:id="@+id/toungeout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="chooseEmoji"
+        app:layout_constraintLeft_toLeftOf="@+id/sad"
+        app:layout_constraintRight_toRightOf="@+id/sad"
+        app:layout_constraintTop_toBottomOf="@+id/sad"
+        app:srcCompat="@drawable/emoji_1f61c"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <ImageButton
+        android:id="@+id/cry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="chooseEmoji"
+        app:layout_constraintLeft_toLeftOf="@+id/forcesmile"
+        app:layout_constraintRight_toRightOf="@+id/forcesmile"
+        app:layout_constraintTop_toBottomOf="@+id/forcesmile"
+        app:srcCompat="@drawable/emoji_1f62d"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <ImageButton
+        android:id="@+id/whine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="chooseEmoji"
+        app:layout_constraintLeft_toLeftOf="@+id/kissyface"
+        app:layout_constraintRight_toRightOf="@+id/kissyface"
+        app:layout_constraintTop_toBottomOf="@+id/kissyface"
+        app:srcCompat="@drawable/emoji_1f62b"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <ImageButton
+        android:id="@+id/whistle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:onClick="chooseEmoji"
+        app:layout_constraintLeft_toLeftOf="@+id/teardrop"
+        app:layout_constraintRight_toRightOf="@+id/teardrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/emoji_1f619"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <ImageButton
+        android:id="@+id/ohno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="chooseEmoji"
+        app:layout_constraintLeft_toRightOf="@+id/kissyface"
+        app:layout_constraintTop_toBottomOf="@+id/hearteyes"
+        app:srcCompat="@drawable/emoji_1f616"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="clickAllDone"
+        android:text="@string/all_done_button"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="48dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1" />
+
+</android.support.constraint.ConstraintLayout>
