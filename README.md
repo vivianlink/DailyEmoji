@@ -16,5 +16,5 @@ The features:
  - sends push notification to remind users to rate their mood. 
  - graphs to display mood ratings for
 
-The result:
+The result: <br>
 <img src="https://github.com/vivianlink/DailyEmoji/blob/master/app/src/main/res/Screen%20Shot%202017-09-17%20at%2012.41.45%20PM.png" width="200">  <img src="https://github.com/vivianlink/DailyEmoji/blob/master/app/src/main/res/21769367_1480633165359169_1397913069_o.png" style="display: inline-block"  width="200">  <img src="https://github.com/vivianlink/DailyEmoji/blob/master/app/src/main/res/21844068_1480624685360017_1186166585_o.png" width="200">. <img src="https://github.com/vivianlink/DailyEmoji/blob/master/app/src/main/res/21706708_1480622855360200_1930258813_o.png" width="200">
