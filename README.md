@@ -1,4 +1,6 @@
-# Daily Emoji
+# Daily Emoji 
+
+LumoHacks 2017, Vancouver
 
 Challenges: 
 Diagnosing depressive disorders can be difficult when relying on the memory and timeline for diagnosis:
